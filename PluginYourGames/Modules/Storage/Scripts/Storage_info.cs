@@ -36,6 +36,12 @@ namespace YG
 #endif
             [NestedYG(nameof(saveCloud))]
             public bool flush;
+#if RU_YG2
+            [Tooltip("Определяет какие данные будут выбраны в случае когда существуют одновременно облачные и локальные сохранения и при этом id локальных сохранений выше. Вкл - облачные, Выкл - локальные.")]
+#else
+            [Tooltip("Determines which data will be selected when both cloud and local saves exist, and the local save IDs are higher. On – cloud saves, Off – local saves.")]
+#endif
+            public bool cloudDataPriority;
 
 #if UNITY_EDITOR && YandexGamesPlatform_yg && !Authorization_yg
 #if RU_YG2

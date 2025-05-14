@@ -276,7 +276,7 @@ namespace YG.Insides
 
             if (cloudDataState == DataState.Exist && localDataState == DataState.Exist)
             {
-                if (cloudData.idSave >= localData.idSave)
+                if (cloudData.idSave >= localData.idSave || infoYG.Storage.cloudDataPriority)
                 {
                     Message($"Load Cloud Complete! ID Cloud Save: {cloudData.idSave}, ID Local Save: {localData.idSave}");
                     YG2.saves = cloudData;
